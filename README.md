@@ -21,6 +21,10 @@ Install Vim bundles:
 
     vim +BundleInstall +qall
 
+Make zsh default shell and restart the terminal:
+
+    chsh -s /usr/bin/zsh
+
 Dependencies
 ------------
 Vim bundle, [Vim-EasyTags][2] requires [`exuberant-ctags`][3].
