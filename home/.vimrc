@@ -1,0 +1,1 @@
+/home/auke/projects/.vimrc/.vimrc
