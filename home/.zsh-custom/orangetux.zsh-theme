@@ -15,11 +15,11 @@ function box_name {
 local current_dir='${PWD/#$HOME/~}'
 
 # Horizontal line.
-local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 9 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)%*'
+local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 9 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)$fg[cyan]%*$reset_color'
 
 # Git info.
 local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX=" [git:%{$fg[cyan]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" [%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
