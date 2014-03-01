@@ -15,7 +15,7 @@ function box_name {
 local current_dir='${PWD/#$HOME/~}'
 
 # Horizontal line.
-local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 9 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)$fg[cyan]%*$reset_color'
+local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 8 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)%{$fg[cyan]%}%*%{$reset_color%}'
 
 # Git info.
 local git_info='$(git_prompt_info)'
