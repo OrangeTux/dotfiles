@@ -15,17 +15,17 @@ function box_name {
 local current_dir='${PWD/#$HOME/~}'
 
 # Horizontal line.
-local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 8 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)%{$fg[cyan]%}%*%{$reset_color%}'
+local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 8 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)%F{cyan}%*%f'
 
 # Git info.
 local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX=" [%{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
+ZSH_THEME_GIT_PROMPT_PREFIX=" [%F{cyan}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%f]"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %F{red}x"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %F{green}o"
 
 # Prompt format: \n # USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $
-PROMPT="${prefix}%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%{$terminfo[bold]$fg[yellow]%}${current_dir}%{$reset_color%}\
+PROMPT="${prefix}%B%F{blue}#%F \
+%B%F{yellow}${current_dir}%f%b\
 ${git_info} \
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%B%F{red}$ %f%b"
