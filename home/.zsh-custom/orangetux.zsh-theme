@@ -14,8 +14,13 @@ function box_name {
 # Directory info.
 local current_dir='${PWD/#$HOME/~}'
 
+length=8
+if [ $(date +%H) -gt 9 ]; then
+    length=9
+fi
+
 # Horizontal line.
-local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > 8 )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)%F{cyan}%*%f'
+local prefix='$(if [[ -z $i ]] ; then i=$(tput cols) ; while (( i-- > $length )) ; do echo -n '—' ; done ; echo -n " " ; unset i ; fi)%F{cyan}%*%f'
 
 # Git info.
 local git_info='$(git_prompt_info)'
