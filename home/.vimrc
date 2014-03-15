@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 syntax on
 filetype plugin indent on
-
+ 
 " Bundles
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
@@ -14,9 +14,8 @@ Bundle 'xolox/vim-easytags'
 Bundle 'klen/python-mode'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'danro/rename.vim'
-Bundle 'rayburgemeestre/phpfolding.vim'
-Bundle 'skammer/vim-css-color'
 Bundle 'xolox/vim-pyref'
+Bundle 'justinmk/vim-sneak'
 
 """""""""""""""""""""
 " python-mode
@@ -90,6 +89,8 @@ set magic
 " Show matching brackets or parenthesis when hovering
 set showmatch
 
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
 """"""""""""""""""""
 " Tabs, indenting and folding
 """"""""""""""""""""
@@ -139,12 +140,12 @@ nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
 " Insert mode
- inoremap <C-j> <ESC>:m .+1<CR>==gi
- inoremap <C-k> <ESC>:m .-2<CR>==gi
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
 "
 " " Visual mode
- vnoremap <C-j> :m '>+1<CR>gv=gv
- vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 """""""""""""""""""
 " Buffer switching
@@ -161,15 +162,6 @@ nnoremap gl :ls<CR>
 
 " List all possible buffers with "gb" and accept a new buffer argument [1]
 nnoremap gb :ls<CR>:b
-
-"""""""""""""""""""
-" Saving and mode changing
-"""""""""""""""""""
-inoremap ;a <Esc>
-nnoremap ;a <Esc>
-inoremap ;d <Esc>:update<Cr>
-nnoremap ;d :update<Cr>
-nnoremap ;f :update<CR>
 
 """""""""""""""""""
 " Misc
@@ -194,3 +186,6 @@ nnoremap <leader>g ~
 
 " Disable irritating beeps
 set noeb vb t_vb=
+
+map W :wa^M
+map! ^W ^[:wa^Ma
