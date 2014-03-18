@@ -27,8 +27,10 @@ Make zsh default shell and restart the terminal:
 
 Dependencies
 ------------
-Vim bundle, [Vim-EasyTags][2] requires [`exuberant-ctags`][3].
+Vim bundle, [Vim-EasyTags][2], requires [`exuberant-ctags`][3]. [Tmux][4] and [Zsh][5] are also required.
 
 [1]:https://github.com/andsens/homeshick
 [2]:https://github.com/xolox/vim-easytags
 [3]:http://ctags.sourceforge.net/
+[4]:http://tmux.sourceforge.net/
+[5]:http://www.zsh.org/
