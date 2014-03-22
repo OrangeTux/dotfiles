@@ -189,3 +189,5 @@ set noeb vb t_vb=
 
 map W :wa^M
 map! ^W ^[:wa^Ma
+
+let mapleader = "\<Space>"
