@@ -13,12 +13,13 @@ chatnets = {
   Freenode = {
     type = "IRC";
     nick = "OrangeTux";
-    autosendcmd = "/msg nickserv identify <password>; wait 2000;";
+    autosendcmd = "/msg nickserv identify <password>; wait 10000;";
   };
 };
 
 channels = (
-  { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#python-dev"; chatnet = "Freenode"; autojoin = "yes"; },
 );
 
 aliases = {
