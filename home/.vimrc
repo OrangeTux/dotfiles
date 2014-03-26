@@ -16,6 +16,7 @@ Bundle 'alfredodeza/pytest.vim'
 Bundle 'danro/rename.vim'
 Bundle 'xolox/vim-pyref'
 Bundle 'justinmk/vim-sneak'
+Bundle 'Shougo/neocomplete.Vim'
 
 """""""""""""""""""""
 " python-mode
@@ -60,6 +61,18 @@ let g:pyref_python = '/usr/share/python2.7/html/'
 nnoremap H :PyRef 
 
 let g:pyref_mapping = 'K'
+
+""""""""""""""""""
+" Neocomplete
+""""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
+
+" Scroll to autocomplete box with Ctrl-j and Ctrl-k.
+inoremap <expr><C-j> ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr><C-k> ((pumvisible())?("\<C-p>"):("k"))
+
+" Complete with Tab.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 """"""""""""""""""
 " Files and file management
@@ -139,11 +152,7 @@ map s <C-w>
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-" Insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-"
-" " Visual mode
+" Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
