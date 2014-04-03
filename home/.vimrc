@@ -4,19 +4,19 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 syntax on
 filetype plugin indent on
- 
+
 " Bundles
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
 Bundle 'klen/python-mode'
 Bundle 'alfredodeza/pytest.vim'
-Bundle 'danro/rename.vim'
 Bundle 'xolox/vim-pyref'
 Bundle 'justinmk/vim-sneak'
 Bundle 'Shougo/neocomplete.Vim'
+Bundle 'OnSyntaxChange'
+Bundle 'AutoTag'
 
 """""""""""""""""""""
 " python-mode
@@ -39,7 +39,7 @@ let g:pymode_lint_cwindow = 0
 " Disable Rope autocompletion
 let g:pymode_rope_completion = 0
 
-"""""""""""""""""""""
+"""""""""""""""""""
 " CtrlP
 """""""""""""""""""""
 " Open CtrlP withe leader-p
@@ -73,6 +73,15 @@ inoremap <expr><C-k> ((pumvisible())?("\<C-p>"):("k"))
 
 " Complete with Tab.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+let g:neocomplete#auto_completion_start_length = 5
+let g:neocomplete#manual_completion_start_length = 5
+let g:neocomplete#min_keyword_length = 6
+
+" Disable autocompletion when writing comments.
+call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i')
+autocmd User SyntaxCommentEnterI silent! NeoCompleteLock
+autocmd User SyntaxCommentLeaveI silent! NeoCompleteUnlock
 
 """"""""""""""""""
 " Files and file management
@@ -159,7 +168,9 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 """""""""""""""""""
 " Buffer switching
 """""""""""""""""""
- 
+" Hide buffers, this don't allow buffers to be saved before changing.
+set hidden
+
 " Move to the previous buffer with "gp"
 nnoremap gp :bp<CR>
 
