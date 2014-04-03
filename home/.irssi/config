@@ -19,7 +19,7 @@ chatnets = {
 
 channels = (
   { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#python-dev"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#python-dev"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -196,3 +196,4 @@ ignores = (
   { level = "JOINS PARTS QUITS NICKS"; channels = ( "#channel" ); },
   { level = "JOINS PARTS QUITS NICKS"; }
 );
+hilights = ( { text = "orangetux"; nick = "yes"; word = "yes"; } );
