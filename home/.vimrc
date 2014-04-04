@@ -215,3 +215,9 @@ map W :wa^M
 map! ^W ^[:wa^Ma
 
 let mapleader = "\<Space>"
+
+" Leave insert mode with kj.
+inoremap kj <ESC>
+
+" Save file with ss.
+nnoremap ss :w<CR>
