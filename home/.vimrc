@@ -1,5 +1,6 @@
 set nocompatible
 set number
+set title
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 syntax on
@@ -17,6 +18,9 @@ Bundle 'justinmk/vim-sneak'
 Bundle 'Shougo/neocomplete.Vim'
 Bundle 'OnSyntaxChange'
 Bundle 'AutoTag'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
 
 """""""""""""""""""""
 " python-mode
