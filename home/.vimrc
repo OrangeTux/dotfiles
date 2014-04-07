@@ -220,4 +220,7 @@ let mapleader = "\<Space>"
 inoremap kj <ESC>
 
 " Save file with ss.
-nnoremap ss :w<CR>
+nnoremap <Leader>s :w<CR>
+
+" Insert breakpoint
+inoremap pdb import pytest; pytest.set_trace()
