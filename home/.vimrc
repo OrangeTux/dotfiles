@@ -33,6 +33,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
+Bundle 'heavenshell/vim-pydocstring'
 
 """""""""""""""""""""
 " python-mode
