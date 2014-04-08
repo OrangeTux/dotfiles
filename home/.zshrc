@@ -79,3 +79,9 @@ bindkey "^R" history-incremental-search-backward
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+
+if [ -n "$TMUX" ]; then
+    export TERM=screen-256color
+fi
+
+alias tmux="tmux -2"

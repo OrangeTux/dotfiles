@@ -1,10 +1,21 @@
 set nocompatible
-set number
-set title
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 syntax on
 filetype plugin indent on
+set title
+
+" Enable line numbers
+set number
+
+" Enable 256 colors
+set t_Co=256
+
+" Show statusbar always
+set laststatus=2
+
+set background=dark
+colorscheme harlequin
 
 " Bundles
 Bundle 'gmarik/vundle'
@@ -21,6 +32,7 @@ Bundle 'AutoTag'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-airline'
 
 """""""""""""""""""""
 " python-mode
