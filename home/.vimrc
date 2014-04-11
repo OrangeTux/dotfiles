@@ -4,6 +4,7 @@ call vundle#rc()
 syntax on
 filetype plugin indent on
 set title
+let mapleader = "\<Space>"
 
 " Enable line numbers
 set number
@@ -233,8 +234,6 @@ set noeb vb t_vb=
 
 map W :wa^M
 map! ^W ^[:wa^Ma
-
-let mapleader = "\<Space>"
 
 " Leave insert mode with kj.
 inoremap kj <ESC>
