@@ -62,6 +62,9 @@ let g:pymode_rope_completion = 0
 " Open CtrlP withe leader-p
 let g:ctrlp_map = '<leader>p'
 
+" Open CtrpTag with leader-t
+nnoremap <leader>t :CtrlPTag<cr>
+
 " Exclude files and folders from indexing.
 let g:ctrlp_custom_ignore = {
     \'dir': '\v(build|\.git|cache|log|vendor)$',
@@ -182,6 +185,10 @@ nnoremap <C-k> :m .-2<CR>==
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" If possible, let at least a line gap between cursor and ceiling/bottom of
+" the buffer.
+set scrolloff=5
+
 """""""""""""""""""
 " Buffer switching
 """""""""""""""""""
@@ -219,7 +226,7 @@ set rulerformat=%55(%{strftime('%F\ %H:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 nmap <silent><Leader>f :w<CR>:Pytest file<CR>
 
 " Switch case with g
-nnoremap <leader>g ~
+nnoremap <Leader>g ~
 
 " Disable irritating beeps
 set noeb vb t_vb=
@@ -233,7 +240,7 @@ let mapleader = "\<Space>"
 inoremap kj <ESC>
 
 " Save file with ss.
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>s :w<cr>
 
 " Insert breakpoint
 inoremap pdb import pytest; pytest.set_trace()
