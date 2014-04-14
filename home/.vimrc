@@ -243,3 +243,9 @@ nnoremap <Leader>s :w<cr>
 
 " Insert breakpoint
 inoremap pdb import pytest; pytest.set_trace()
+
+" Remove highling search results on Enter
+nnoremap <cr> :noh<cr>
+
+" Disables preview of documentation when using autocomplete.
+set completeopt=menu 
