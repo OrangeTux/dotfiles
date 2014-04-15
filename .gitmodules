@@ -4,3 +4,6 @@
 [submodule "home/.oh-my-zsh"]
 	path = home/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "home/.config/python"]
+	path = home/.config/python
+	url = https://github.com/brandoninvergo/python-startup.git

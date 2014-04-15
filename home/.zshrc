@@ -85,3 +85,6 @@ if [ -n "$TMUX" ]; then
 fi
 
 alias tmux="tmux -2"
+
+# Use python-startup
+export PYTHONSTARTUP=$HOME/.config/python/python-startup.py
