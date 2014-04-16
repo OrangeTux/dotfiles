@@ -44,15 +44,20 @@ let g:pymode_syntax = 0
 let g:pymode_syntax_all = 0
 
 " Enable pylint, and run in with F5
-let g:pymode_lint = 1
 let g:pymode_lint_on_write = 0
+
 nnoremap <F5> :PymodeLint<cr>
+
+" Jump to next and previous pylint error.
+nnoremap <leader>k :lprev<cr>
+nnoremap <leader>j :lnext<cr>
+
+" Above maps only work as error window is open, I want it as small as possible
+let g:pymode_quickfix_minheight = 0
+let g:pymode_quickfix_maxheight = 0
 
 " Don't load show documentation plugin, we have PyRef
 let g:pymode_doc = 0
-
-" Disable error window
-let g:pymode_lint_cwindow = 0
 
 " Disable Rope autocompletion
 let g:pymode_rope_completion = 0
@@ -104,6 +109,9 @@ call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i')
 autocmd User SyntaxCommentEnterI silent! NeoCompleteLock
 autocmd User SyntaxCommentLeaveI silent! NeoCompleteUnlock
 
+" Disables preview of documentation when using autocomplete.
+set completeopt=menu 
+
 """"""""""""""""""
 " Files and file management
 """"""""""""""""""
@@ -134,6 +142,7 @@ set showmatch
 
 nmap f <Plug>Sneak_s
 nmap F <Plug>Sneak_S
+
 """"""""""""""""""""
 " Tabs, indenting and folding
 """"""""""""""""""""
@@ -238,14 +247,8 @@ map! ^W ^[:wa^Ma
 " Leave insert mode with kj.
 inoremap kj <ESC>
 
-" Save file with ss.
-nnoremap <Leader>s :w<cr>
+" Save file with enter.
+nnoremap <cr> :w<cr>
 
 " Insert breakpoint
 inoremap pdb import pytest; pytest.set_trace()
-
-" Remove highling search results on Enter
-nnoremap <cr> :noh<cr>
-
-" Disables preview of documentation when using autocomplete.
-set completeopt=menu 
