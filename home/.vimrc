@@ -35,6 +35,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'heavenshell/vim-pydocstring'
+Bundle 'terryma/vim-expand-region'
 
 """""""""""""""""""""
 " python-mode
@@ -156,6 +157,11 @@ set tabstop=4
 " Folding
 set foldnestmax=2
 set foldmethod=indent
+
+" Toggle single fold.
+nnoremap zi za
+" Toggle all folds on cursor on cursor location
+nnoremap zI zA
 
 " Select tab with <leader>#
 map <leader>1 1gt
