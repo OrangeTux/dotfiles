@@ -45,9 +45,10 @@ let g:pymode_syntax = 0
 let g:pymode_syntax_all = 0
 
 " Enable pylint, and run in with F5
-let g:pymode_lint_on_write = 0
-
 nnoremap <F5> :PymodeLint<cr>
+
+" Disable pymode debug options, the interfere with remap of CtrlPBuffer
+let g:pymode_breakpoint = 0
 
 " Jump to next and previous pylint error.
 nnoremap <leader>k :lprev<cr>
@@ -71,6 +72,9 @@ let g:ctrlp_map = '<leader>p'
 
 " Open CtrpTag with leader-t
 nnoremap <leader>t :CtrlPTag<cr>
+
+" Open CtrlPBuffer with leader-b
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Exclude files and folders from indexing.
 let g:ctrlp_custom_ignore = {
