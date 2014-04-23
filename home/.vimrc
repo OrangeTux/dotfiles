@@ -36,6 +36,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'heavenshell/vim-pydocstring'
 Bundle 'terryma/vim-expand-region'
+Bundle 'bling/vim-bufferline'
 
 """""""""""""""""""""
 " python-mode
@@ -81,6 +82,13 @@ let g:ctrlp_custom_ignore = {
     \'dir': '\v(build|\.git|cache|log|vendor)$',
     \'file': '\v(\.pyc|tags)$'
     \ }
+
+""""""""""""""""""
+" Bufferline
+""""""""""""""""""
+
+" Don't show buffers in command bar
+let g:bufferline_echo = 0
 
 """"""""""""""""""
 " Documentation
