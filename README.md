@@ -11,7 +11,7 @@ Get and enable homesick:
 
 Download this repo:
     
-    homeshick --batch clone git@github.com:OrangeTux/dotfiles
+    homeshick --batch clone https://github.com/OrangeTux/dotfiles.git
 
 Link the dotfiles.
     
