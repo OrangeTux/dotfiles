@@ -264,9 +264,16 @@ map! ^W ^[:wa^Ma
 
 " Leave insert mode with kj.
 inoremap kj <ESC>
+inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kk <ESC>
 
 " Save file with enter.
 nnoremap <cr> :w<cr>
 
 " Insert breakpoint
 inoremap pdb import pytest; pytest.set_trace()
+
+" Toggle paste and nopaste
+set pastetoggle=<F2>
+set showmode
