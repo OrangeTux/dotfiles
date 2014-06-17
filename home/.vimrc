@@ -277,3 +277,7 @@ inoremap pdb import pytest; pytest.set_trace()
 " Toggle paste and nopaste
 set pastetoggle=<F2>
 set showmode
+
+" Disable syntax highlighting for Yaml. Something is wrong with new regex 
+" engine in Vim 7.4. I tried several things, nothing worked.
+au BufRead *.yml set syntax=off
