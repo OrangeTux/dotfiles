@@ -155,3 +155,6 @@ bar {
 # change volume
 bindsym $mod+equal exec pactl set-sink-volume 1 +5%
 bindsym $mod+minus exec pactl set-sink-volume 1 -- -5%
+
+# lock screen
+bindsym Mod4+l exec i3lock -c 111111
