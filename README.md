@@ -6,7 +6,7 @@ Installation
 ============
 Automate installation with:
 
-    curl -s https://github.com/OrangeTux/dotfiles/blob/master/automate.sh | bash
+    curl -s https://raw.githubusercontent.com/OrangeTux/dotfiles/master/automate.sh | bash
 
 Or do it manually. Get and enable homesick:
 
