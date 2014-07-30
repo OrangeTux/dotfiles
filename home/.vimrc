@@ -27,7 +27,7 @@ Bundle 'klen/python-mode'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'xolox/vim-pyref'
 Bundle 'justinmk/vim-sneak'
-Bundle 'Shougo/neocomplete.Vim'
+"Bundle 'Shougo/neocomplete.Vim'
 Bundle 'OnSyntaxChange'
 Bundle 'AutoTag'
 Bundle 'tpope/vim-speeddating'
@@ -37,7 +37,6 @@ Bundle 'bling/vim-airline'
 Bundle 'heavenshell/vim-pydocstring'
 Bundle 'terryma/vim-expand-region'
 Bundle 'bling/vim-bufferline'
-Bundle 'junegunn/limelight.vim'
 
 """""""""""""""""""""
 " python-mode
@@ -282,6 +281,3 @@ set showmode
 " Disable syntax highlighting for Yaml. Something is wrong with new regex 
 " engine in Vim 7.4. I tried several things, nothing worked.
 au BufRead *.yml set syntax=off
-
-" Enable Limelight
-Limelight 0.5
