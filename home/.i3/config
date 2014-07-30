@@ -158,3 +158,12 @@ bindsym $mod+minus exec pactl set-sink-volume 1 -- -5%
 
 # lock screen
 bindsym Mod4+l exec i3lock -c 111111
+
+# start web browser with Super+w
+bindsym Mod4+w exec chromium
+
+# start file browser with Super+f
+bindsym Mod4+f exec thunar
+
+# start termina with Super+t
+bindsym Mod4+t exec i3-sensible-terminal 
