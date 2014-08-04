@@ -22,24 +22,22 @@ colorscheme harlequin
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
-Bundle 'xolox/vim-misc'
 Bundle 'klen/python-mode'
 Bundle 'alfredodeza/pytest.vim'
+Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-pyref'
-Bundle 'justinmk/vim-sneak'
-"Bundle 'Shougo/neocomplete.Vim'
 Bundle 'OnSyntaxChange'
 Bundle 'AutoTag'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
-Bundle 'heavenshell/vim-pydocstring'
 Bundle 'terryma/vim-expand-region'
 Bundle 'bling/vim-bufferline'
+Bundle 'justinmk/vim-sneak'
 
 """""""""""""""""""""
-" python-mode
+" Python-mode
 """""""""""""""""""""
 " Disable syntax highlighing of pymode
 let g:pymode_syntax = 0
@@ -50,14 +48,6 @@ nnoremap <F5> :PymodeLint<cr>
 
 " Disable pymode debug options, the interfere with remap of CtrlPBuffer
 let g:pymode_breakpoint = 0
-
-" Jump to next and previous pylint error.
-nnoremap <leader>k :lprev<cr>
-nnoremap <leader>j :lnext<cr>
-
-" Above maps only work as error window is open, I want it as small as possible
-let g:pymode_quickfix_minheight = 0
-let g:pymode_quickfix_maxheight = 0
 
 " Don't load show documentation plugin, we have PyRef
 let g:pymode_doc = 0
@@ -85,7 +75,6 @@ let g:ctrlp_custom_ignore = {
 
 """"""""""""""""""
 " Bufferline
-""""""""""""""""""
 
 " Don't show buffers in command bar
 let g:bufferline_echo = 0
@@ -253,9 +242,6 @@ set rulerformat=%55(%{strftime('%F\ %H:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 " Run tests of current file by pressing leader-f
 nmap <silent><Leader>f :w<CR>:Pytest file<CR>
 
-" Switch case with g
-nnoremap <Leader>g ~
-
 " Disable irritating beeps
 set noeb vb t_vb=
 
@@ -264,9 +250,6 @@ map! ^W ^[:wa^Ma
 
 " Leave insert mode with kj.
 inoremap kj <ESC>
-inoremap jj <ESC>
-inoremap jk <ESC>
-inoremap kk <ESC>
 
 " Save file with enter.
 nnoremap <cr> :w<cr>
