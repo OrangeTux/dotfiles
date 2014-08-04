@@ -167,3 +167,6 @@ bindsym Mod4+f exec thunar
 
 # start termina with Super+t
 bindsym Mod4+t exec i3-sensible-terminal 
+
+# start Network Manager at boot
+exec --no-startup-id nm-applet
