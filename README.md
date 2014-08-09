@@ -29,6 +29,10 @@ Make zsh default shell and restart the terminal:
 
     chsh -s /usr/bin/zsh
 
+Screenshot
+----------
+![Screenshot](screenshot.png?raw=true "Screenshot")
+
 Dependencies
 ------------
 Vim bundle, [AutoTag][2], requires [`exuberant-ctags`][3]. [Tmux][4] and [Zsh][5] are also required.
