@@ -172,3 +172,21 @@ exec --no-startup-id nm-applet
 
 # take screenshot with Super+s
 bindsym Mod4+s exec xfce4-screenshooter
+
+# Pastel colours in the theme of Zenburn
+set $bg     #2c2c2e
+set $fg     #cfcfcf
+set $hi     #efef8f
+set $ac     #a0afa0
+set $tx     #040404
+set $ia     #8f8f8f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+
+# set some nice colors      border     background  text
+client.unfocused            $tx        $bg         $fg
+client.focused              $tx        $bg         $ia
+client.focused_inactive     $tx        $bg         $ac
+client.urgent               $tx        $rd         $tx
