@@ -173,6 +173,9 @@ exec --no-startup-id nm-applet
 # take screenshot with Super+s
 bindsym Mod4+s exec xfce4-screenshooter
 
+# set opacity of 0.8 for inactive screen
+exec compton -i 0.8
+
 # Pastel colours in the theme of Zenburn
 set $bg     #2c2c2e
 set $fg     #cfcfcf
