@@ -46,7 +46,7 @@ ZSH_THEME="orangetux"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git symfony2 ssh-agent colored-man colorize cp history tmux vundle autojump pip python fabric debian battery virtualenv autopep8 git-extrasi pylint vi-mode)
+plugins=(vagrant git gitignore ssh-agent colored-man colorize cp history tmux vundle autojump pip python fabric debian battery virtualenv autopep8 git-extrasi pylint vi-mode, web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,6 +86,7 @@ fi
 
 alias tmux="tmux -2"
 alias v=vim
+alias s=ssh
 
-# Use python-startup
-export PYTHONSTARTUP=$HOME/.config/python/python-startup.py
+# Fix virtualenv error: ImportError: No module named pkg_resources
+alias fix_python="curl https://bootstrap.pypa.io/ez_setup.py | python && rm setuptools-[0-9].[0-9].zip"
