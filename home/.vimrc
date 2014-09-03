@@ -1,8 +1,10 @@
 set nocompatible
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 syntax on
-filetype plugin indent on
 set title
 let mapleader = "\<Space>"
 
@@ -18,24 +20,26 @@ set laststatus=2
 set background=dark
 colorscheme harlequin
 
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'alfredodeza/pytest.vim'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-pyref'
-Bundle 'OnSyntaxChange'
-Bundle 'AutoTag'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
-Bundle 'terryma/vim-expand-region'
-Bundle 'bling/vim-bufferline'
-Bundle 'justinmk/vim-sneak'
+" Plugins
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-pyref'
+Plugin 'OnSyntaxChange'
+Plugin 'AutoTag'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-expand-region'
+Plugin 'bling/vim-bufferline'
+Plugin 'justinmk/vim-sneak'
 
+call vundle#end() 
+filetype plugin indent on
 """""""""""""""""""""
 " Python-mode
 """""""""""""""""""""
