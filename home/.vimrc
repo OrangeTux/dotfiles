@@ -47,7 +47,6 @@ set laststatus=2
 set background=dark
 colorscheme harlequin
 
-
 """""""""""""""""""
 " CtrlP
 """""""""""""""""""""
@@ -69,7 +68,6 @@ let g:ctrlp_custom_ignore = {
 """"""""""""""""""
 " Bufferline
 """"""""""""""""""
-
 " Don't show buffers in command bar
 let g:bufferline_echo = 0
 
@@ -242,4 +240,3 @@ set showmode
 " Disable syntax highlighting for Yaml. Something is wrong with new regex 
 " engine in Vim 7.4. I tried several things, nothing worked.
 au BufRead *.yml set syntax=off
-call vundle#config#require(g:bundles)
