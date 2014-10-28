@@ -1,8 +1,37 @@
-set nocompatible
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-syntax on
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugins
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'OnSyntaxChange'
+Plugin 'AutoTag'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-expand-region'
+Plugin 'bling/vim-bufferline'
+Plugin 'justinmk/vim-sneak'
+
+" Python plugins
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'klen/python-mode' 
+Plugin 'xolox/vim-pyref'
+
+" Go plugins.
+Plugin 'fatih/vim-go'
+
+call vundle#end()      
+
 filetype plugin indent on
+syntax on
+
 set title
 let mapleader = "\<Space>"
 
@@ -18,42 +47,6 @@ set laststatus=2
 set background=dark
 colorscheme harlequin
 
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'alfredodeza/pytest.vim'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-pyref'
-Bundle 'OnSyntaxChange'
-Bundle 'AutoTag'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
-Bundle 'terryma/vim-expand-region'
-Bundle 'bling/vim-bufferline'
-Bundle 'justinmk/vim-sneak'
-
-"""""""""""""""""""""
-" Python-mode
-"""""""""""""""""""""
-" Disable syntax highlighing of pymode
-let g:pymode_syntax = 0
-let g:pymode_syntax_all = 0
-
-" Enable pylint, and run in with F5
-nnoremap <F5> :PymodeLint<cr>
-
-" Disable pymode debug options, the interfere with remap of CtrlPBuffer
-let g:pymode_breakpoint = 0
-
-" Don't load show documentation plugin, we have PyRef
-let g:pymode_doc = 0
-
-" Disable Rope autocompletion
-let g:pymode_rope_completion = 0
 
 """""""""""""""""""
 " CtrlP
@@ -69,26 +62,16 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Exclude files and folders from indexing.
 let g:ctrlp_custom_ignore = {
-    \'dir': '\v(build|\.git|cache|log|vendor)$',
+    \'dir': '\v(build|\.git|cache|log|vendor|lib|project)$',
     \'file': '\v(\.pyc|tags)$'
     \ }
 
 """"""""""""""""""
 " Bufferline
+""""""""""""""""""
 
 " Don't show buffers in command bar
 let g:bufferline_echo = 0
-
-""""""""""""""""""
-" Documentation
-""""""""""""""""""
-" Location of documentation
-let g:pyref_python = '/usr/share/python2.7/html/'
-
-" Map H to :Pyref .
-nnoremap H :PyRef 
-
-let g:pyref_mapping = 'K'
 
 """"""""""""""""""
 " Neocomplete
@@ -239,8 +222,6 @@ set colorcolumn=80
 set ruler
 set rulerformat=%55(%{strftime('%F\ %H:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
-" Run tests of current file by pressing leader-f
-nmap <silent><Leader>f :w<CR>:Pytest file<CR>
 
 " Disable irritating beeps
 set noeb vb t_vb=
@@ -254,9 +235,6 @@ inoremap kj <ESC>
 " Save file with enter.
 nnoremap <cr> :w<cr>
 
-" Insert breakpoint
-inoremap pdb import pytest; pytest.set_trace()
-
 " Toggle paste and nopaste
 set pastetoggle=<F2>
 set showmode
@@ -264,3 +242,4 @@ set showmode
 " Disable syntax highlighting for Yaml. Something is wrong with new regex 
 " engine in Vim 7.4. I tried several things, nothing worked.
 au BufRead *.yml set syntax=off
+call vundle#config#require(g:bundles)
