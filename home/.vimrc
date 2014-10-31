@@ -26,6 +26,7 @@ Plugin 'xolox/vim-pyref'
 
 " Go plugins.
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 call vundle#end()      
 
