@@ -25,6 +25,14 @@ Install Vim bundles:
 
     vim +BundleInstall +qall
 
+Install Go binaries:
+
+    :GoInstallBinaries
+
+Install jshint via NPM:
+
+   npm install jshint -g
+
 Make zsh default shell and restart the terminal:
 
     chsh -s /usr/bin/zsh

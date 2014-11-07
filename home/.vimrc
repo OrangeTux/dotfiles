@@ -7,6 +7,7 @@ call vundle#begin()
 " Plugins
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'OnSyntaxChange'
@@ -47,6 +48,11 @@ set laststatus=2
 
 set background=dark
 colorscheme harlequin
+
+set tabstop=8 
+set expandtab 
+set shiftwidth=4 
+set softtabstop=4
 
 """""""""""""""""""
 " CtrlP
