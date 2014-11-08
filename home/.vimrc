@@ -247,3 +247,6 @@ set showmode
 " Disable syntax highlighting for Yaml. Something is wrong with new regex 
 " engine in Vim 7.4. I tried several things, nothing worked.
 au BufRead *.yml set syntax=off
+
+" Disable linting of python files by Syntactic, we have Python-Mode for that.
+let g:syntastic_mode_map = { "passive_filetypes": ["python"] }
