@@ -19,7 +19,8 @@ chatnets = {
 
 channels = (
   { name = "#python"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#python-dev"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#python-nl"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "yes"; },
 );
 
 aliases = {
