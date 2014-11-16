@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -156,22 +156,19 @@ bindsym $mod+equal exec pactl set-sink-volume 1 +5%
 bindsym $mod+minus exec pactl set-sink-volume 1 -- -5%
 
 # lock screen
-bindsym Mod4+l exec i3lock -c 111111
+bindsym Mod1+l exec i3lock -c 111111
 
 # start web browser with Super+w
-bindsym Mod4+w exec chromium
+bindsym Mod1+w exec chromium
 
 # start file browser with Super+f
-bindsym Mod4+f exec thunar
-
-# start termina with Super+t
-bindsym Mod4+t exec i3-sensible-terminal 
+bindsym Mod1+f exec thunar
 
 # start Network Manager at boot
 exec --no-startup-id nm-applet
 
 # take screenshot with Super+s
-bindsym Mod4+s exec xfce4-screenshooter
+bindsym Mod1+s exec xfce4-screenshooter
 
 # set opacity of 0.8 for inactive screen
 exec compton -i 0.8
