@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Increase or decrease brightness of screen.
+# 
+# Example usage:
+#
+#   $ edit_brightness -50
+#   $ edit_brightness 10
+# 
+# Make sure /sys/class/backlight/radeon_bl0/brightness is writable. This can
+# be done add the folowing line to crontab file of root:
+#
+#   @reboot chmod o+w /sys/class/backlight/radeon_bl0/brightness
+#
+set -e
+
+SYS_PATH="/sys/class/backlight/radeon_bl0"
+CUR_BRIGHTNESS=$(cat "$SYS_PATH/actual_brightness")
+NEW_BRIGHTNESS=$(($CUR_BRIGHTNESS + $1))
+
+echo $NEW_BRIGHTNESS | tee "$SYS_PATH/brightness" &> /dev/null
