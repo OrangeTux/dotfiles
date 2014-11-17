@@ -1,0 +1,11 @@
+# Reload feeds every 10 seconds.
+auto-reload yes
+reload-time 10
+
+confirm-exit yes
+
+# Vim like key bindings to move through Newsbeuter.
+bind-key j down
+bind-key k up 
+bind-key h quit
+bind-key l open
