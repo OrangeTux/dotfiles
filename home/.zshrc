@@ -5,8 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_CUSTOM=$HOME/.zsh-custom/
-ZSH_THEME="orangetux"
+#ZSH_CUSTOM=$HOME/.zsh-custom/
+ZSH_THEME="solarized-powerline"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -80,7 +80,7 @@ bindkey "^R" history-incremental-search-backward
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
-if [ -n "$TMUX" ]; then
+if [ -n "$TERM" ]; then
     export TERM=screen-256color
 fi
 
@@ -90,3 +90,11 @@ alias s=ssh
 
 # Fix virtualenv error: ImportError: No module named pkg_resources
 alias fix_python="curl https://bootstrap.pypa.io/ez_setup.py | python && rm setuptools-[0-9].[0-9].zip"
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/auke/bin
+export GOPATH=$HOME/projects/go
+export PATH=$PATH:/home/auke/projects/go/bin
+export PATH=$PATH:/home/auke/downloads/activator
+
+alias ut="sudo service ntp stop ; sudo ntpdate -s time.nist.gov ; sudo service ntp start"
