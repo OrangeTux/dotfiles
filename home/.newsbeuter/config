@@ -9,3 +9,9 @@ bind-key j down
 bind-key k up 
 bind-key h quit
 bind-key l open
+
+color listnormal color244 color234
+color listfocus  color166 color235 
+color info       color136 color235 
+color background color244 color234
+color article    color244 color234
