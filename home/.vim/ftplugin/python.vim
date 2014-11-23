@@ -22,6 +22,9 @@ let g:pymode_doc = 0
 " Disable Rope autocompletion
 let g:pymode_rope_completion = 0
 
+" Disable Rope.
+let g:pymode_rope = 0
+
 " Disable error window
 let g:pymode_lint_cwindow = 0
 
@@ -44,4 +47,3 @@ nmap <silent><Leader>f :w<CR>:Pytest file<CR>
 
 " Insert breakpoint
 inoremap pdb import pytest; pytest.set_trace()
-

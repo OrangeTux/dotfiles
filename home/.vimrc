@@ -49,10 +49,10 @@ set laststatus=2
 set background=dark
 colorscheme harlequin
 
-set tabstop=8 
-set expandtab 
-set shiftwidth=4 
-set softtabstop=4
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 """""""""""""""""""
 " CtrlP
@@ -68,7 +68,7 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Exclude files and folders from indexing.
 let g:ctrlp_custom_ignore = {
-    \'dir': '\v(build|\.git|cache|log|vendor|lib|project)$',
+    \'dir': '\v(build|\.git|cache|log|vendor|lib|project|node_modules)$',
     \'file': '\v(\.pyc|tags)$'
     \ }
 
@@ -227,7 +227,6 @@ set colorcolumn=80
 set ruler
 set rulerformat=%55(%{strftime('%F\ %H:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
-
 " Disable irritating beeps
 set noeb vb t_vb=
 
@@ -250,3 +249,5 @@ au BufRead *.yml set syntax=off
 
 " Disable linting of python files by Syntactic, we have Python-Mode for that.
 let g:syntastic_mode_map = { "passive_filetypes": ["python"] }
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
