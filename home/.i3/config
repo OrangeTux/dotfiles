@@ -205,5 +205,11 @@ client.focused              $tx        $bg         $ia
 client.focused_inactive     $tx        $bg         $ac
 client.urgent               $tx        $rd         $tx
 
+# Start Irssi and Newsbeuter on workspace 5 and 6 at boot.
 exec --no-startup-id i3-msg 'workspace $ws6; exec i3-sensible-terminal -e irssi;'
 exec --no-startup-id i3-msg 'workspace $ws5; exec i3-sensible-terminal -e newsbeuter; workspace $ws1' 
+
+# Set wallpaper at boot.
+exec --no-startup-id feh --bg-center $HOME/.i3/simple_blue.jpg
+#exec --no-startup-id i3-msg 'workspace $ws8; exec chromium https://baopt.hipchat.com/chat --new-window && sleep 0.1'
+#exec --no-startup-id i3-msg 'workspace $ws9; exec chromium chromium --app-id=clhhggbfdinjmjhajaheehoeibfljjno && sleep 0.1 && workspace $wsg1'
