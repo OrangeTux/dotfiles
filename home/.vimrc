@@ -19,13 +19,17 @@ Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-expand-region'
 Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
+Plugin 'airblade/vim-gitgutter'
 
-" Python plugins
+" LaTex
+Plugin 'TeX-PDF'
+
+" Python 
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'klen/python-mode' 
 Plugin 'xolox/vim-pyref'
 
-" Go plugins.
+" Go 
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
