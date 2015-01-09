@@ -2,8 +2,7 @@
 # It will not be overwritten, so edit it as you like.
 #
 # Should you change your keyboard layout some time, delete # this file and re-run i3-config-wizard(1).
-#
-
+# 
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -14,8 +13,11 @@ set $mod Mod4
 # Write workspace names to variables.
 set $ws1 "1:editor"
 set $ws2 "2:browser"
+set $ws3 "3:files"
+set $ws4 "4"
 set $ws5 "5:newsbeuter"
 set $ws6 "6:irrsi"
+set $ws7 "7"
 set $ws8 "8:hipchat"
 set $ws9 "9:music"
 set $ws0 "10:telegram"
@@ -100,8 +102,8 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
@@ -112,8 +114,8 @@ bindsym $mod+0 workspace $ws0
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
@@ -176,7 +178,7 @@ bindsym Mod1+l exec i3lock -c 111111
 bindsym Mod1+w exec chromium
 
 # start file browser with Super+f
-bindsym Mod1+f exec thunar
+bindsym Mod1+f exec i3-sensible-terminal -e vifm
 
 # start Network Manager at boot
 exec --no-startup-id nm-applet
@@ -211,12 +213,11 @@ exec --no-startup-id i3-msg 'workspace $ws5; exec i3-sensible-terminal -e newsbe
 
 # Set wallpaper at boot.
 exec --no-startup-id feh --bg-center $HOME/.i3/simple_blue.jpg
-#exec --no-startup-id i3-msg 'workspace $ws8; exec chromium https://baopt.hipchat.com/chat --new-window && sleep 0.1'
-#exec --no-startup-id i3-msg 'workspace $ws9; exec chromium chromium --app-id=clhhggbfdinjmjhajaheehoeibfljjno && sleep 0.1 && workspace $wsg1'
+exec --no-startup-id i3-msg 'workspace $ws8; exec hipchat'
+exec --no-startup-id i3-msg 'workspace $ws0; exec /home/auke/opt/Telegram/Telegram; workspace $ws1'
 
 # Move currently selected window to scratchpad.
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
-
