@@ -6,3 +6,6 @@ nmap <Leader>im :GoImport
 nmap <Leader>gd :GoDoc<CR>
 nmap <Leader>gb :GoDocBrowser<CR>
 nmap <F5> :GoLint<CR>
+
+let g:go_fmt_command = "goimports"
+set colorcolumn=120
