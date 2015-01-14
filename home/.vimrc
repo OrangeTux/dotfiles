@@ -20,6 +20,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'localvimrc'
 
 " LaTex
 Plugin 'TeX-PDF'
@@ -32,6 +33,10 @@ Plugin 'xolox/vim-pyref'
 " Go 
 Plugin 'fatih/vim-go'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+
+" Markdown
+Plugin 'plasticboy/vim-markdown'
+Plugin 'godlygeek/tabular'
 
 call vundle#end()      
 
@@ -255,3 +260,6 @@ au BufRead *.yml set syntax=off
 let g:syntastic_mode_map = { "passive_filetypes": ["python"] }
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Is required to type special characters like ä, ê en ì.
+set digraph
