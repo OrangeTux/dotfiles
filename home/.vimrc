@@ -203,23 +203,8 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " the buffer.
 set scrolloff=5
 
-"""""""""""""""""""
-" Buffer switching
-"""""""""""""""""""
 " Hide buffers, this don't allow buffers to be saved before changing.
 set hidden
-
-" Move to the previous buffer with "gp"
-nnoremap gp :bp<CR>
-
-" Move to the next buffer with "gn"
-nnoremap gn :bn<CR>
-
-" List all possible buffers with "gl"
-nnoremap gl :ls<CR>
-
-" List all possible buffers with "gb" and accept a new buffer argument [1]
-nnoremap gb :ls<CR>:b
 
 """""""""""""""""""
 " Misc
@@ -238,9 +223,6 @@ set rulerformat=%55(%{strftime('%F\ %H:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 " Disable irritating beeps
 set noeb vb t_vb=
-
-map W :wa^M
-map! ^W ^[:wa^Ma
 
 " Leave insert mode with kj.
 inoremap kj <ESC>
