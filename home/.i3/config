@@ -221,3 +221,9 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
+
+# Kill Crunchbang's default notification daemon...
+exec killall -q xfce4-notifyd
+
+# ...and start Dunst as notification daemon.
+exec --no-startup-id dunst
