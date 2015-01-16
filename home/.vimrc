@@ -38,6 +38,9 @@ Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'plasticboy/vim-markdown'
 Plugin 'godlygeek/tabular'
 
+" Docker
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
 call vundle#end()      
 
 filetype plugin indent on
