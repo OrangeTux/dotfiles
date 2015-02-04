@@ -47,7 +47,7 @@ filetype plugin indent on
 syntax on
 
 set title
-let mapleader = "\<Space>"
+let mapleader = "<Space>"
 
 " Enable line numbers
 set number
@@ -133,7 +133,7 @@ set ignorecase
 " Highlight search results
 set hlsearch
 
-" Intelegent searching
+" Intelligent searching
 set incsearch
 
 " For regex expresiions
@@ -239,12 +239,12 @@ set showmode
 
 " Disable syntax highlighting for Yaml. Something is wrong with new regex 
 " engine in Vim 7.4. I tried several things, nothing worked.
-au BufRead *.yml set syntax=off
+"au BufRead *.yml set syntax=off
 
 " Disable linting of python files by Syntactic, we have Python-Mode for that.
 let g:syntastic_mode_map = { "passive_filetypes": ["python"] }
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Is required to type special characters like ä, ê en ì.
-set digraph
+" Enable spellcheck 
+nn <F7> :setlocal spell! spell?<CR>
