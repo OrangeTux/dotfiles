@@ -123,6 +123,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
+workspace $ws1 output DVI-I-2
+workspace $ws2 output DVI-I-1
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -227,3 +230,7 @@ exec killall -q xfce4-notifyd
 
 # ...and start Dunst as notification daemon.
 exec --no-startup-id dunst
+
+# Shutdown with Mod+End. Add something like 'auke ALL=NOPASSWD: /sbin/shutdown' 
+# to sudoers file.
+bindsym $mod+End exec sudo shutdown -h now
