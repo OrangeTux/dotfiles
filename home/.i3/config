@@ -163,6 +163,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        output DVI-I-1
+        mode hide
 }
 
 # change volume
@@ -178,7 +180,7 @@ bindsym XF86MonBrightnessUp exec ~/bin/edit_brightness 10
 bindsym Mod1+l exec i3lock -c 111111
 
 # start web browser with Super+w
-bindsym Mod1+w exec chromium
+bindsym Mod1+w exec x-www-browser
 
 # start file browser with Super+f
 bindsym Mod1+f exec i3-sensible-terminal -e vifm
@@ -206,7 +208,7 @@ set $rd     #e89393
 
 # set some nice colors      border     background  text
 client.unfocused            $tx        $bg         $fg
-client.focused              $tx        $bg         $ia
+client.focused              $tx        $yw         $ia
 client.focused_inactive     $tx        $bg         $ac
 client.urgent               $tx        $rd         $tx
 
@@ -234,3 +236,5 @@ exec --no-startup-id dunst
 # Shutdown with Mod+End. Add something like 'auke ALL=NOPASSWD: /sbin/shutdown' 
 # to sudoers file.
 bindsym $mod+End exec sudo shutdown -h now
+
+new_window 1pixel
