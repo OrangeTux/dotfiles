@@ -45,7 +45,7 @@ ZSH_THEME="norm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(extract git ssh-agent colored-man colorize cp history tmux vundle autojump pip python fabric debian battery virtualenv autopep8 git-extrasi pylint vi-mode)
+plugins=(extract git ssh-agent colored-man colorize cp history vundle autojump pip python fabric debian battery virtualenv autopep8 git-extrasi pylint vi-mode)
 
 # User configuration
 
