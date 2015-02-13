@@ -123,6 +123,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
+workspace $ws1 output DVI-I-2
+workspace $ws2 output DVI-I-1
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -160,6 +163,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        output DVI-I-1
+        mode hide
 }
 
 # change volume
@@ -175,7 +180,7 @@ bindsym XF86MonBrightnessUp exec ~/bin/edit_brightness 10
 bindsym Mod1+l exec i3lock -c 111111
 
 # start web browser with Super+w
-bindsym Mod1+w exec chromium
+bindsym Mod1+w exec x-www-browser
 
 # start file browser with Super+f
 bindsym Mod1+f exec i3-sensible-terminal -e vifm
@@ -203,7 +208,7 @@ set $rd     #e89393
 
 # set some nice colors      border     background  text
 client.unfocused            $tx        $bg         $fg
-client.focused              $tx        $bg         $ia
+client.focused              $tx        $yw         $ia
 client.focused_inactive     $tx        $bg         $ac
 client.urgent               $tx        $rd         $tx
 
@@ -227,3 +232,9 @@ exec killall -q xfce4-notifyd
 
 # ...and start Dunst as notification daemon.
 exec --no-startup-id dunst
+
+# Shutdown with Mod+End. Add something like 'auke ALL=NOPASSWD: /sbin/shutdown' 
+# to sudoers file.
+bindsym $mod+End exec sudo shutdown -h now
+
+new_window 1pixel

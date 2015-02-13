@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Apply correct screen layout.
+$HOME/bin/screen_layout_work.sh

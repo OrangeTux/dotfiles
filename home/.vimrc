@@ -47,7 +47,7 @@ filetype plugin indent on
 syntax on
 
 set title
-let mapleader = "<Space>"
+let mapleader = "\<Space>"
 
 " Enable line numbers
 set number
