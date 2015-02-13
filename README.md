@@ -4,7 +4,11 @@ Synchronize dotfiles with [homeshick][1].
 
 Installation
 ============
-Or do it manually. Get and enable homesick:
+Setup everything automatically with...:
+
+    $ curl -s https://raw.githubusercontent.com/OrangeTux/dotfiles/master/automate.sh | bash
+
+...or do it manually. Get and enable homesick:
 
     $ git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
     $ source $HOME/.homesick/repos/homeshick/homeshick.sh
@@ -20,6 +24,7 @@ Link the dotfiles.
 Install [Vundle][vundle]:
 
     $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 Install Vim bundles:
 
     vim +PluginInstall +qall
