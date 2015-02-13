@@ -1,6 +1,6 @@
 dotfiles
 ========
-Synchronize dotfiles with [homeshick][1].
+Synchronize dotfiles with [homeshick][homeshick].
 
 Installation
 ============
@@ -33,10 +33,6 @@ Install Go binaries:
 
     :GoInstallBinaries
 
-Install jshint via NPM:
-
-   npm install jshint -g
-
 Make zsh default shell and restart the terminal:
 
     chsh -s /usr/bin/zsh
@@ -49,31 +45,27 @@ Dependencies
 ------------
 The following system binaries are required.
 
-    - `[autojump][autojump]`, a `cd` command that learns
-    - `[dunst][dunst]`, a notification daemon.
-    - `[feh][feh]` is required for setting the background of desktop
-    - `[irssi][irrsi]`, an IRC client
-    - `[newsbeuter][newsbeuter]`, a RSS reader
-    - `[tmux][tmux]`, a terminal multiplexer
-    - `[vifm][vifm]`, a ncurses based file manager
-    - `[zsh][zsh]`, an alternative Unix shell
+* [autojump][autojump] a `cd` command that learns
+* [dunst][dunst], a notification daemon.
+* [feh][feh] is required for setting the background of desktop
+* [fzf][fzf] a fuzzy finder for your shell
+* [irssi][irssi] an IRC client
+* [newsbeuter][newsbeuter], a RSS reader
+* [tmux][tmux], a terminal multiplexer
+* [scrot][scrot], for taking screenshots
+* [vifm][vifm], a ncurses based file manager
+* [zsh][zsh], an alternative Unix shell
 
-`feh` 
-Vim bundle, [AutoTag][2], requires [`exuberant-ctags`][3]. [Tmux][4] and [Zsh][5] are also required.
-..
 [autojump]:https://github.com/joelthelion/autojump
 [dunst]:http://knopwob.org/dunst/index.html
 [feh]:http://feh.finalrewind.org/
-[irssi]:http://feh.finalrewind.org/
+[fzf]:https://github.com/junegunn/fzf
+[irssi]:http://www.irssi.org/
 [newsbeuter]:http://www.newsbeuter.org/
 [tmux]:http://tmux.sourceforge.net/
 [scrot]:https://launchpad.net/ubuntu/+source/scrot
 [vifm]:http://vifm.sourceforge.net/
 [zsh]:http://www.zsh.org/
 
-
-[1]:https://github.com/andsens/homeshick
-[2]:http://www.vim.org/scripts/script.php?script_id=1343
-[3]:http://ctags.sourceforge.net/
-[4]:http://tmux.sourceforge.net/
-[5]:http://www.zsh.org/
+[homeshick]:https://github.com/andsens/homeshick
+[vundle]:https://github.com/gmarik/Vundle.vim
