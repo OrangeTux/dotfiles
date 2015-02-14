@@ -1,0 +1,65 @@
+#######################
+#### Command execution
+#####################
+
+# Send notification when command has finished. 
+# Usage:
+#    n <command>
+# 
+# Lets say you want to build something that takes a certain time:
+#    n make
+n() {
+    "$@"
+    RETVAL=$?
+    URGENCY="normal"
+    [ $RETVAL -ne 0 ] && URGENCY="critical"
+    notify-send -u $URGENCY -t 10000 "Command '$@' has finished"
+}
+
+# Insert sudo at start of line with Alt-r, taken from
+# http://stackoverflow.com/a/970202
+insert_sudo () { 
+    zle beginning-of-line; zle -U "sudo " 
+}
+zle -N insert-sudo insert_sudo
+bindkey "^[r" insert-sudo
+
+#########
+#### Git
+#######
+
+# Pull and rebase latest changes in current branch and push local changes to 
+# remote.
+alias gsync="git pull --rebase $(current_branch) && git push $(current_branch)"
+
+# Combine `git add` and `git status`.
+function gad () {
+    git add $@ && git status
+}
+
+##########
+#### Misc
+########
+
+# Activate Python virtualenv with 'a'.
+alias a="source .env/bin/activate"
+
+# Synchronize system time with the rest of the world.
+alias ut="sudo service ntp stop ; sudo ntpdate -s time.nist.gov; \
+    sudo service ntp start"
+
+# Unalias `ag`, which has been set by the ZSH plugin debian. `ag` now executes
+# binary located `/usr/local/bin/ag`.
+unalias ag
+
+# Search for file(s) with fzf and open them in Vim.
+fe() {
+  local file
+  file=$(fzf --query="$1" --select-1 --exit-0)
+  [ -n "$file" ] && ${EDITOR:-vim} "$file"
+}
+
+# Search for processes with fzf and kill them.
+fkill() {
+  ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
+}

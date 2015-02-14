@@ -45,6 +45,7 @@ Dependencies
 ------------
 The following system binaries are required.
 
+* [ag][ag] a code searching tool similar to `ack`, with a focus on speed
 * [autojump][autojump] a `cd` command that learns
 * [dunst][dunst], a notification daemon.
 * [feh][feh] is required for setting the background of desktop
@@ -56,6 +57,7 @@ The following system binaries are required.
 * [vifm][vifm], a ncurses based file manager
 * [zsh][zsh], an alternative Unix shell
 
+[ag]:https://github.com/ggreer/the_silver_searcher
 [autojump]:https://github.com/joelthelion/autojump
 [dunst]:http://knopwob.org/dunst/index.html
 [feh]:http://feh.finalrewind.org/
