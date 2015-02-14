@@ -78,11 +78,20 @@ nnoremap <leader>t :CtrlPTag<cr>
 " Open CtrlPBuffer with leader-b
 nnoremap <leader>b :CtrlPBuffer<cr>
 
-" Exclude files and folders from indexing.
-let g:ctrlp_custom_ignore = {
-    \'dir': '\v(build|\.git|cache|log|vendor|lib|project|node_modules)$',
-    \'file': '\v(\.pyc|tags)$'
-    \ }
+if executable('ag')
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+else
+    " Fall back to using git ls-files if Ag is not available
+    " Exclude files and folders from indexing.
+    let g:ctrlp_custom_ignore = {
+        \'dir': '\v(build|\.git|cache|log|vendor|lib|project|node_modules)$',
+        \'file': '\v(\.pyc|tags)$'
+        \ }
+endif
 
 """"""""""""""""""
 " Bufferline
