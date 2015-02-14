@@ -85,7 +85,7 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 alias a="source .env/bin/activate"
 
 # Pull latest changes in current branch and push local changes to remote.
-alias gsync="git pull --rebase origin $(current_branch) && git push origin $(current_branch)"
+alias gsync="git pull --rebase $(current_branch) && git push $(current_branch)"
 
 # Synchronize system time with the rest of the world.
 alias ut="sudo service ntp stop ; sudo ntpdate -s time.nist.gov ; sudo service ntp start"
