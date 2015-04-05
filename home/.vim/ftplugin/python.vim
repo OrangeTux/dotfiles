@@ -26,7 +26,17 @@ let g:pymode_rope_completion = 0
 let g:pymode_rope = 0
 
 " Disable error window
-let g:pymode_lint_cwindow = 0
+let g:pymode_lint_cwindow = 1
+
+""""""""""""""""""
+" Pytest.vim
+""""""""""""""""""
+" Run tests of active buffer.
+nmap <silent><Leader>fl :Pytest file<CR>
+
+" Run test under cursor.
+nmap <silent><Leader>fn :Pytest function<CR>
+
 
 """"""""""""""""""
 " Documentation
@@ -42,8 +52,5 @@ let g:pyref_mapping = 'K'
 """"""""""""""""""
 " Misc
 """"""""""""""""""
-" Run tests of current file by pressing leader-f
-nmap <silent><Leader>f :w<CR>:Pytest file<CR>
-
 " Insert breakpoint
 inoremap pdb import pytest; pytest.set_trace()
