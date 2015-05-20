@@ -20,7 +20,9 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'bling/vim-bufferline'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'ajh17/VimCompletesMe'
 Plugin 'localvimrc'
+Plugin 'rking/ag.vim'
 
 " LaTex
 Plugin 'TeX-PDF'
@@ -40,6 +42,10 @@ Plugin 'godlygeek/tabular'
 
 " Docker
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
+" Javascript
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()      
 
@@ -79,6 +85,9 @@ nnoremap <leader>t :CtrlPTag<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
 
 if executable('ag')
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
     let g:ctrlp_user_command = 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
 
@@ -145,14 +154,14 @@ set hlsearch
 " Intelligent searching
 set incsearch
 
-" For regex expresiions
+" For regex expressions
 set magic
 
 " Show matching brackets or parenthesis when hovering
 set showmatch
 
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
+nmap <Leader>f <Plug>Sneak_s
+nmap <Leader>F <Plug>Sneak_S
 
 """"""""""""""""""""
 " Tabs, indenting and folding
@@ -236,8 +245,8 @@ set rulerformat=%55(%{strftime('%F\ %H:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 " Disable irritating beeps
 set noeb vb t_vb=
 
-" Leave insert mode with kj.
-inoremap kj <ESC>
+" Leave insert mode with jk.
+imap jk <ESC>
 
 " Save file with enter.
 nnoremap <cr> :w<cr>
@@ -257,3 +266,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Enable spellcheck 
 nn <F7> :setlocal spell! spell?<CR>
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0 

@@ -50,6 +50,7 @@ The following system binaries are required.
 * [dunst][dunst], a notification daemon.
 * [feh][feh] is required for setting the background of desktop
 * [fzf][fzf] a fuzzy finder for your shell
+* [i3][i3] a tiling window manager
 * [irssi][irssi] an IRC client
 * [newsbeuter][newsbeuter], a RSS reader
 * [tmux][tmux], a terminal multiplexer
@@ -62,6 +63,7 @@ The following system binaries are required.
 [dunst]:http://knopwob.org/dunst/index.html
 [feh]:http://feh.finalrewind.org/
 [fzf]:https://github.com/junegunn/fzf
+[i3]:https://i3wm.org/
 [irssi]:http://www.irssi.org/
 [newsbeuter]:http://www.newsbeuter.org/
 [tmux]:http://tmux.sourceforge.net/
