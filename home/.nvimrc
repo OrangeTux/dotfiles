@@ -12,6 +12,9 @@ Plug 'scrooloose/nerdcommenter'
 " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plug 'klen/python-mode'
 
+" Use CTRL-A/CTRL-X to increment dates, times, and more.
+Plug 'tpope/vim-speeddating'
+
 " Readline style insertion.
 Plug 'tpope/vim-rsi'
 
