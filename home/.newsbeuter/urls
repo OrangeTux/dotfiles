@@ -1,7 +1,6 @@
 http://www.markshuttleworth.com/feed "Linux"
 http://neovim.org/news.xml "News"
 http://www.python.org/channews.rdf "News"
-http://planet.python.org/rss10.xml "News"
 http://feeds.feedburner.com/pmarca "Business"
 http://tetamap.wordpress.com/feed/ "Python"
 http://kennethreitz.org/category/development/feed/ "Python"
@@ -43,3 +42,4 @@ http://blog.rust-lang.org/feed.xml "Rust"
 http://rustyrad.io/feed/podcast "Podcast"
 http://talkpython.fm/episodes/rss "Podcast"
 http://pythontesting.net/feed/podcast/ "Podcast"
+https://tutanota.com/blog/feed.xml
