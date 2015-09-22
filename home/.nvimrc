@@ -7,7 +7,7 @@ Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 
 " Vim plugin for intensely orgasmic commenting.
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter' 
 
 " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plug 'klen/python-mode'
@@ -36,6 +36,11 @@ syntax on
 
 " Set line at 80 columns
 set colorcolumn=80
+
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 "#
 "# Movement
@@ -68,9 +73,6 @@ map <leader> <C-w>
 " Leader-b for myself.
 let g:pymode_breakpoint = 0
 
-" Open previous buffer with Leader-b.
-nnoremap <leader>b :e#<cr>
-
 "#
 "# Behaviour
 "#
@@ -84,8 +86,8 @@ set noswapfile
 imap jj <ESC>
 
 " Save file in normal mode by pressing Enter
-nnoremap <CR> :w<CR>
 
+nnoremap <CR> :w<CR>
 " Wrap line when it exceed textwidth.
 set wrap
 
@@ -93,8 +95,11 @@ set wrap
 "# Ctrl-P
 "#
 
-" Open CtrlP withe leader-p
+" Open CtrlP withe leader-p.
 let g:ctrlp_map = '<leader>p'
+
+" Open CtrlP to search in open buffers.
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Usa ag (The Silver Searcher) for listening files if available.
 if executable('ag')
@@ -113,7 +118,6 @@ else
         \'file': '\v(\.pyc|tags)$'
         \ }
 endif
-
 
 "#
 "# Misc
