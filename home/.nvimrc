@@ -12,6 +12,12 @@ Plug 'scrooloose/nerdcommenter'
 " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plug 'klen/python-mode'
 
+" Syntax checking hacks for vim. 
+Plug 'scrooloose/syntastic'
+
+" React JSX syntax highlighting and indenting for vim. 
+Plug 'mxw/vim-jsx'
+
 " Use CTRL-A/CTRL-X to increment dates, times, and more.
 Plug 'tpope/vim-speeddating'
 
@@ -20,6 +26,7 @@ Plug 'tpope/vim-rsi'
 
 " A code-completion engine for Vim.
 Plug 'valloric/YouCompleteMe'
+
 
 call plug#end()
 
@@ -133,3 +140,4 @@ inoremap <BS> <Nop>
 " Disable Delete
 noremap <Del> <Nop>
 inoremap <Del> <Nop>
+
