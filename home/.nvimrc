@@ -27,7 +27,6 @@ Plug 'tpope/vim-rsi'
 " A code-completion engine for Vim.
 Plug 'valloric/YouCompleteMe'
 
-
 call plug#end()
 
 "#
@@ -44,10 +43,20 @@ syntax on
 " Set line at 80 columns
 set colorcolumn=80
 
+
+" Number of columns a tab counts for.
 set tabstop=8
+
+" Insert appropriate number of columns when pressing Tab key.
 set expandtab
+
+" Number of columns inserted for indentation.
 set shiftwidth=4
+
+" Number of columns Vim uses when Tab is pressed in insert mode.
 set softtabstop=4
+
+set modeline
 
 "#
 "# Movement
@@ -62,6 +71,14 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+  
+" Disable Backspace
+noremap <BS> <Nop>
+inoremap <BS> <Nop>
+
+" Disable Delete
+noremap <Del> <Nop>
+inoremap <Del> <Nop>
 
 " Moving (block of) lines around with Ctrl-j and Ctrl-k. Learned from 
 " http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html
@@ -74,11 +91,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Map Leader key to Ctrl-w. This allows buffer switching with Leader-h|j|k|l.
 map <leader> <C-w>
-
-" Disable Pymode's functionality around breakpoints. By default this option is
-" enabled and maps some functionality I don't use to Leader-b. I want to use
-" Leader-b for myself.
-let g:pymode_breakpoint = 0
 
 "#
 "# Behaviour
@@ -93,8 +105,8 @@ set noswapfile
 imap jj <ESC>
 
 " Save file in normal mode by pressing Enter
-
 nnoremap <CR> :w<CR>
+
 " Wrap line when it exceed textwidth.
 set wrap
 
@@ -132,12 +144,6 @@ endif
 
 " Map Leader to space bar
 let mapleader = "\<Space>"
-  
-" Disable Backspace
-noremap <BS> <Nop>
-inoremap <BS> <Nop>
 
-" Disable Delete
-noremap <Del> <Nop>
-inoremap <Del> <Nop>
-
+" Yank always to clipboard, see :he nvim_clipboard.
+set clipboard+=unnamedplus
