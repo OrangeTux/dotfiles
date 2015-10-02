@@ -10,9 +10,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 
 " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 
-" Syntax checking hacks for vim. 
+" Vim mode that uses Rope library to provide features like Python refactorings and code-assists.
+Plug 'python-rope/ropevim'
+
+" Syntax checking hacks for vim.
 Plug 'scrooloose/syntastic'
 
 " React JSX syntax highlighting and indenting for vim.

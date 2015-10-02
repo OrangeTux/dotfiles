@@ -10,4 +10,4 @@ let g:pymode_lint = 0
 let g:pymode_breakpoint = 0
 
 " Use Flake8 as linter.
-g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8']
