@@ -3,11 +3,11 @@ call plug#begin('~/.vim/plugged')
 " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'.
 Plug 'rking/ag.vim'
 
-" Full path fuzzy file, buffer, mru, tag, ... finder for Vim. 
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'kien/ctrlp.vim'
 
 " Vim plugin for intensely orgasmic commenting.
-Plug 'scrooloose/nerdcommenter' 
+Plug 'scrooloose/nerdcommenter'
 
 " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plug 'klen/python-mode'
@@ -15,7 +15,7 @@ Plug 'klen/python-mode'
 " Syntax checking hacks for vim. 
 Plug 'scrooloose/syntastic'
 
-" React JSX syntax highlighting and indenting for vim. 
+" React JSX syntax highlighting and indenting for vim.
 Plug 'mxw/vim-jsx'
 
 " Use CTRL-A/CTRL-X to increment dates, times, and more.
@@ -35,7 +35,7 @@ call plug#end()
 set nocompatible
 
 " Enable line numbers
-set number 
+set number
 
 " Enable syntax highlighting
 syntax on
@@ -71,7 +71,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-  
+
 " Disable Backspace
 noremap <BS> <Nop>
 inoremap <BS> <Nop>
@@ -80,7 +80,7 @@ inoremap <BS> <Nop>
 noremap <Del> <Nop>
 inoremap <Del> <Nop>
 
-" Moving (block of) lines around with Ctrl-j and Ctrl-k. Learned from 
+" Moving (block of) lines around with Ctrl-j and Ctrl-k. Learned from
 " http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -110,14 +110,17 @@ nnoremap <CR> :w<CR>
 " Wrap line when it exceed textwidth.
 set wrap
 
+" Remove trailing white space on save.
+autocmd BufWritePre * :%s/\s\+$//e
+
 "#
-"# Ctrl-P
+"# kien/ctrlp.vim
 "#
 
-" Open CtrlP withe leader-p.
+" Open Ctrl-P withe leader-p.
 let g:ctrlp_map = '<leader>p'
 
-" Open CtrlP to search in open buffers.
+" Open Ctrl0P to search in open buffers.
 nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Usa ag (The Silver Searcher) for listening files if available.
@@ -137,6 +140,13 @@ else
         \'file': '\v(\.pyc|tags)$'
         \ }
 endif
+
+"#
+"# scrooloose/syntastic
+"#
+
+" Run linter by pressing F5.
+nnoremap <F5> :SyntasticCheck<cr>
 
 "#
 "# Misc
