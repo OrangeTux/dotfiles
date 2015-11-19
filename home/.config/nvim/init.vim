@@ -1,3 +1,6 @@
+let g:python_host_prog='/usr/local/bin/python2.7'
+set shell=/bin/bash
+
 call plug#begin('~/.vim/plugged')
 
 " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'.
@@ -5,6 +8,9 @@ Plug 'rking/ag.vim'
 
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'kien/ctrlp.vim'
+
+" Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
+Plug 'Raimondi/delimitMate'
 
 " Vim plugin for intensely orgasmic commenting.
 Plug 'scrooloose/nerdcommenter'
@@ -37,6 +43,9 @@ call plug#end()
 "#
 set nocompatible
 
+" Enable plugins
+filetype plugin on
+
 " Enable line numbers
 set number
 
@@ -45,7 +54,6 @@ syntax on
 
 " Set line at 80 columns
 set colorcolumn=80
-
 
 " Number of columns a tab counts for.
 set tabstop=8
