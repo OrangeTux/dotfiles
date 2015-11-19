@@ -21,11 +21,20 @@ Plug 'scrooloose/nerdcommenter'
 " Vim mode that uses Rope library to provide features like Python refactorings and code-assists.
 Plug 'python-rope/ropevim'
 
+" Perform all your vim insert mode completions with Tab
+Plug 'ervandew/supertab'
+
 " Syntax checking hacks for vim.
 Plug 'scrooloose/syntastic'
 
+" UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
+Plug 'SirVer/ultisnips'
+
 " React JSX syntax highlighting and indenting for vim.
 Plug 'mxw/vim-jsx'
+
+" vim-snipmate default snippets (Previously snipmate-snippets).
+Plug 'honza/vim-snippets'
 
 " Use CTRL-A/CTRL-X to increment dates, times, and more.
 Plug 'tpope/vim-speeddating'
@@ -153,11 +162,29 @@ else
 endif
 
 "#
+"# ervandew/supertab
+"#
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"#
 "# scrooloose/syntastic
 "#
-
 " Run linter by pressing F5.
 nnoremap <F5> :SyntasticCheck<cr>
+
+"#
+"# SirVer/ultisnips
+"#
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"#
+"# Valloric/YouCompleteMe
+"#
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "#
 "# Misc
