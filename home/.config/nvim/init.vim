@@ -1,4 +1,5 @@
-let g:python_host_prog='/usr/local/bin/python2.7'
+let g:python_host_prog='/usr/local/bin/python2'
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 set shell=/bin/bash
 
 call plug#begin('~/.vim/plugged')
@@ -14,9 +15,6 @@ Plug 'Raimondi/delimitMate'
 
 " Vim plugin for intensely orgasmic commenting.
 Plug 'scrooloose/nerdcommenter'
-
-" Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box.
-"Plug 'klen/python-mode'
 
 " Vim mode that uses Rope library to provide features like Python refactorings and code-assists.
 Plug 'python-rope/ropevim'
@@ -36,14 +34,16 @@ Plug 'mxw/vim-jsx'
 " vim-snipmate default snippets (Previously snipmate-snippets).
 Plug 'honza/vim-snippets'
 
+" Dark powered asynchronous completion framework for neovim.
+Plug 'Shougo/deoplete.nvim'
+
 " Use CTRL-A/CTRL-X to increment dates, times, and more.
 Plug 'tpope/vim-speeddating'
 
 " Readline style insertion.
 Plug 'tpope/vim-rsi'
 
-" A code-completion engine for Vim.
-Plug 'valloric/YouCompleteMe'
+Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
 
@@ -77,6 +77,10 @@ set shiftwidth=4
 set softtabstop=4
 
 set modeline
+
+" Underline current line when entering insert mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 "#
 "# Movement
@@ -164,11 +168,14 @@ endif
 "#
 "# ervandew/supertab
 "#
+
+" Stolen from: http://stackoverflow.com/a/22253548/1073222
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "#
 "# scrooloose/syntastic
 "#
+
 " Run linter by pressing F5.
 nnoremap <F5> :SyntasticCheck<cr>
 
@@ -180,11 +187,9 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 "#
-"# Valloric/YouCompleteMe
+"# Enable Deoplete at startup.
 "#
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:deoplete#enable_at_startup = 1
 
 "#
 "# Misc
