@@ -1,7 +1,3 @@
-let g:python_host_prog='/usr/local/bin/python2'
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
-set shell=/bin/bash
-
 call plug#begin('~/.vim/plugged')
 
 " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'.
@@ -26,24 +22,23 @@ Plug 'ervandew/supertab'
 Plug 'scrooloose/syntastic'
 
 " UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
-Plug 'SirVer/ultisnips'
-
-" React JSX syntax highlighting and indenting for vim.
-Plug 'mxw/vim-jsx'
-
-" vim-snipmate default snippets (Previously snipmate-snippets).
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
 
 " Dark powered asynchronous completion framework for neovim.
 Plug 'Shougo/deoplete.nvim'
 
+" Molokai color scheme for Vim.
+Plug 'tomasr/molokai'
+
+Plug 'altercation/vim-colors-solarized'
 " Use CTRL-A/CTRL-X to increment dates, times, and more.
 Plug 'tpope/vim-speeddating'
 
 " Readline style insertion.
 Plug 'tpope/vim-rsi'
 
-Plug 'tmhedberg/SimpylFold'
+" Go development plugin for Vim.
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -52,6 +47,7 @@ call plug#end()
 "#
 set nocompatible
 
+
 " Enable plugins
 filetype plugin on
 
@@ -59,7 +55,9 @@ filetype plugin on
 set number
 
 " Enable syntax highlighting
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Set line at 80 columns
 set colorcolumn=80
@@ -197,6 +195,3 @@ let g:deoplete#enable_at_startup = 1
 
 " Map Leader to space bar
 let mapleader = "\<Space>"
-
-" Yank always to clipboard, see :he nvim_clipboard.
-set clipboard+=unnamedplus

@@ -14,11 +14,11 @@ Setup everything automatically with...:
     $ source $HOME/.homesick/repos/homeshick/homeshick.sh
 
 Download this repo:
-    
+
     $ homeshick --batch clone https://github.com/OrangeTux/dotfiles.git
 
 Link the dotfiles.
-    
+
     $ homeshick link --force
 
 Install [Vundle][vundle]:
@@ -47,28 +47,18 @@ The following system binaries are required.
 
 * [ag][ag] a code searching tool similar to `ack`, with a focus on speed
 * [autojump][autojump] a `cd` command that learns
-* [dunst][dunst], a notification daemon.
-* [feh][feh] is required for setting the background of desktop
 * [fzf][fzf] a fuzzy finder for your shell
 * [i3][i3] a tiling window manager
-* [irssi][irssi] an IRC client
-* [newsbeuter][newsbeuter], a RSS reader
-* [tmux][tmux], a terminal multiplexer
 * [scrot][scrot], for taking screenshots
-* [vifm][vifm], a ncurses based file manager
+* [rofi][rofi] Ro
+* [urxvt][urxvt] A terminal emulator
 * [zsh][zsh], an alternative Unix shell
 
 [ag]:https://github.com/ggreer/the_silver_searcher
 [autojump]:https://github.com/joelthelion/autojump
-[dunst]:http://knopwob.org/dunst/index.html
-[feh]:http://feh.finalrewind.org/
 [fzf]:https://github.com/junegunn/fzf
 [i3]:https://i3wm.org/
-[irssi]:http://www.irssi.org/
-[newsbeuter]:http://www.newsbeuter.org/
-[tmux]:http://tmux.sourceforge.net/
 [scrot]:https://launchpad.net/ubuntu/+source/scrot
-[vifm]:http://vifm.sourceforge.net/
 [zsh]:http://www.zsh.org/
 
 [homeshick]:https://github.com/andsens/homeshick
